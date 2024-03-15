@@ -15,6 +15,7 @@
 ├ /screen2 - grab screenshot (2 method)
 ├ /shell (command) - execute command
 ├ /stealer - steal data
-┗ /screen - grab screenshot```
+┗ /screen - grab screenshot
+```
 
 Также если отправить файл боту он будет запущен на пк
