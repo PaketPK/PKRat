@@ -1,0 +1,8 @@
+Cryptodome
+Pillow
+psutil
+pyautogui
+requests
+telebot
+opencv-python-headless
+pywin32
