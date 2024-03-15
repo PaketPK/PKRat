@@ -35,9 +35,9 @@ AdmidID = "iddiddiddiddiddiddidd"
 
 TOKENS = [
     "TOKENNNNNN1",
-    "TOKENNNNNN2,
-    "TOKENNNNNN3,
-    "TOKENNNNNN4
+    "TOKENNNNNN2",
+    "TOKENNNNNN3",
+    "TOKENNNNNN4"
 ]
 
 def killer(name):
