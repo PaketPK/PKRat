@@ -3,7 +3,8 @@
 
 Автор НЕ несет ответственности за ваши действия
 
-```[PKRat]
+```
+[PKRat]
 ├ /msg (message) - show message
 ├ /key (key) - press key
 ├ /web (url) - open url in browser
